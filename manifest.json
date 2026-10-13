@@ -1,0 +1,12 @@
+{
+  "name": "عنايتي | ENAYATI",
+  "short_name": "عنايتي",
+  "description": "مساحتك الصغيرة للعناية ببشرتك",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fffaf5",
+  "theme_color": "#d88da5"
+}
