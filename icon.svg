@@ -1,0 +1,8 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#fff0f4"/>
+  <rect x="28" y="28" width="456" height="456" rx="96" fill="#fffaf5" stroke="#e7b6c6" stroke-width="5"/>
+  <path d="M256 365 C215 324 130 267 130 190 C130 124 211 105 256 170 C301 105 382 124 382 190 C382 267 297 324 256 365Z" fill="#d88da5"/>
+  <path d="M183 198 C188 168 211 156 230 174" fill="none" stroke="#fffaf5" stroke-width="9" stroke-linecap="round"/>
+  <text x="256" y="425" text-anchor="middle" font-family="Georgia,serif" font-size="42" font-weight="bold" fill="#a95675">ENAYATI</text>
+</svg>
