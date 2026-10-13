@@ -1,0 +1,1324 @@
+<div class="app">
+
+  <header class="navbar">
+    <a class="logo" href="#home">enayati <span>♡</span></a>
+    <span class="nav-note">a girl & her skincare diary 🎀</span>
+  </header>
+
+  <main id="home">
+
+    <section class="hero">
+      <div class="hero-text">
+        <span class="sticker">♡ YOUR SOFT ERA ♡</span>
+        <p class="script">dear diary,</p>
+        <h1>romanticize<br>your <em>routine.</em></h1>
+        <p class="hero-arabic">
+          لأن العناية بنفسك مو مجرد روتين،<br>
+          هي لحظات صغيرة تحبين فيها نفسك أكثر.
+        </p>
+        <a class="hero-button" href="#routine">my little rituals ↗</a>
+      </div>
+
+      <div class="collage">
+        <div class="photo photo-main">
+          <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=85" alt="منتجات عناية بالبشرة">
+          <span class="photo-label">skin first ♡</span>
+        </div>
+
+        <div class="photo photo-small">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=85" alt="جلسة عناية وجمال">
+        </div>
+
+        <div class="tape">little<br>moments</div>
+        <div class="flower-sticker">✿</div>
+        <div class="heart-sticker">♡</div>
+        <div class="note-card">take care<br>of yourself<br>pretty girl ♡</div>
+      </div>
+    </section>
+
+    <div class="marquee">
+      <span>♡ self love club ✿ soft skin days ♡ little rituals ✿ self love club ♡</span>
+    </div>
+
+    <section class="section" id="routine">
+      <div class="section-heading">
+        <span class="eyebrow">01 — THE DAILY RITUAL</span>
+        <h2>my skincare diary <span>♡</span></h2>
+        <p>كل يوم بداية جديدة لبشرة تحبينها.</p>
+      </div>
+
+      <div class="tabs">
+        <button class="active" onclick="showRoutine('morning', this)">☀ صباحي</button>
+        <button onclick="showRoutine('evening', this)">☾ مسائي</button>
+      </div>
+
+      <div id="steps"></div>
+      <p id="progress" class="progress"></p>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-heading">
+        <span class="eyebrow">02 — MY BEAUTY SHELF</span>
+        <h2>things I love <span>🎀</span></h2>
+        <p>ركنك الصغير لكل المنتجات اللي تحبينها.</p>
+      </div>
+
+      <form id="productForm">
+        <input id="productName" type="text" placeholder="اسم المنتج..." required>
+
+        <select id="productType">
+          <option value="غسول">غسول</option>
+          <option value="مرطب">مرطب</option>
+          <option value="واقي شمس">واقي شمس</option>
+          <option value="سيروم">سيروم</option>
+          <option value="علاج">علاج</option>
+          <option value="أخرى">أخرى</option>
+        </select>
+
+        <button type="submit" class="primary">+ أضيفي إلى مجموعتي ♡</button>
+      </form>
+
+      <div id="productList"></div>
+    </section>
+
+    <section class="section diary-section" id="diary">
+      <div class="section-heading">
+        <span class="eyebrow">03 — LETTERS TO MY SKIN</span>
+        <h2>dear skin, <span>📔</span></h2>
+        <p>ملاحظاتك الصغيرة تستاهل مكانًا خاصًا.</p>
+      </div>
+
+      <form id="diaryForm">
+        <label for="diaryDate">التاريخ ♡</label>
+        <input id="diaryDate" type="date" required>
+
+        <label for="skinCondition">كيف بشرتك اليوم؟</label>
+        <select id="skinCondition" required>
+          <option value="">اختاري الحالة</option>
+          <option value="صافية">صافية ✨</option>
+          <option value="حبوب">فيها حبوب</option>
+          <option value="جفاف">جافة</option>
+          <option value="دهنية">دهنية</option>
+          <option value="تهيج">احمرار أو تهيّج</option>
+          <option value="مختلطة">مختلطة</option>
+        </select>
+
+        <label for="diaryNotes">اكتبي لي يا بشرتي...</label>
+        <textarea id="diaryNotes" rows="4" placeholder="منتج جديد؟ شعورك اليوم؟ أي ملاحظة صغيرة... ♡"></textarea>
+
+        <button type="submit" class="primary">احفظي مذكّراتي ♡</button>
+      </form>
+
+      <div id="diaryList"></div>
+    </section>
+
+    <section class="section reminder-section" id="reminders">
+      <div class="section-heading">
+        <span class="eyebrow">04 — A NOTE TO MYSELF</span>
+        <h2>don't forget, lovely <span>♡</span></h2>
+        <p>تذكيرات لطيفة تساعدك تلتزمين بروتينك.</p>
+      </div>
+
+      <button type="button" id="enableNotifications" class="secondary">
+        ♡ تفعيل إشعارات التذكير
+      </button>
+
+      <form id="reminderForm">
+        <input id="reminderName" type="text" placeholder="اسم المنتج أو خطوة العناية" required>
+
+        <select id="reminderPeriod">
+          <option value="morning">الصباح ☀</option>
+          <option value="evening">المساء ☾</option>
+        </select>
+
+        <label for="reminderTime">الوقت المناسب لكِ</label>
+        <input id="reminderTime" type="time" required>
+
+        <button type="submit" class="primary">+ أضيفي تذكيرًا ♡</button>
+      </form>
+
+      <div id="reminderList"></div>
+    </section>
+
+    <section class="closing-note">
+      <span>✿</span>
+      <p>you are your own kind of beautiful.</p>
+      <h2>كوني لطيفة مع نفسك ♡</h2>
+      <span class="closing-small">a little reminder from enayati, with love.</span>
+    </section>
+
+  </main>
+
+  <footer>
+    ENAYATI ♡ MADE FOR YOUR SOFTEST DAYS
+  </footer>
+
+</div>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+
+:root {
+  --pink: #d88da5;
+  --pink-dark: #a95675;
+  --pink-soft: #f8dce5;
+  --cream: #fffaf5;
+  --paper: #fffdfb;
+  --ink: #513b43;
+  --muted: #a28b91;
+  --line: #f0dce1;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--ink);
+  background-color: var(--cream);
+  background-image: radial-gradient(#e9b9c7 0.7px, transparent 0.7px);
+  background-size: 22px 22px;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+}
+
+.app {
+  width: min(100% - 36px, 1050px);
+  margin: 0 auto;
+  padding: 22px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 4px 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  color: var(--pink-dark);
+  font-family: 'Playfair Display', serif;
+  font-size: 29px;
+  font-weight: 700;
+  text-decoration: none;
+  direction: ltr;
+}
+
+.logo span {
+  color: var(--pink);
+}
+
+.nav-note {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 28px;
+  margin: 30px 0 38px;
+  padding: 38px;
+  background: rgba(255, 253, 251, .86);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  box-shadow: 5px 6px 0 #f5e2e7;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.sticker {
+  display: inline-block;
+  padding: 7px 13px;
+  background: var(--pink-soft);
+  border: 1px dashed #dca0b4;
+  border-radius: 3px;
+  color: var(--pink-dark);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.script {
+  margin: 22px 0 0;
+  color: var(--pink-dark);
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  font-style: italic;
+  direction: ltr;
+  text-align: right;
+}
+
+.hero h1 {
+  margin: 7px 0 15px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 600;
+  line-height: 1.12;
+  direction: ltr;
+  text-align: right;
+}
+
+.hero h1 em {
+  color: var(--pink-dark);
+  font-weight: 500;
+}
+
+.hero-arabic {
+  color: #947c84;
+  font-size: 13px;
+  line-height: 2.1;
+}
+
+.hero-button {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 12px 18px;
+  background: var(--pink-dark);
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: .2s;
+}
+
+.hero-button:hover {
+  background: var(--pink);
+  transform: translateY(-2px);
+}
+
+.collage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 340px;
+  direction: ltr;
+}
+
+.photo {
+  position: absolute;
+  padding: 8px 8px 30px;
+  background: white;
+  border: 1px solid #f2e4e5;
+  box-shadow: 0 8px 22px #81515e16;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-main {
+  z-index: 1;
+  top: 16px;
+  left: 14%;
+  width: 59%;
+  height: 255px;
+  transform: rotate(-5deg);
+}
+
+.photo-small {
+  z-index: 2;
+  right: 1%;
+  bottom: 18px;
+  width: 43%;
+  height: 170px;
+  transform: rotate(7deg);
+}
+
+.photo-label {
+  display: block;
+  padding-top: 7px;
+  color: var(--pink-dark);
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  font-style: italic;
+  text-align: center;
+}
+
+.tape {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 2%;
+  padding: 9px 13px;
+  background: #f4d0dc;
+  color: #88566a;
+  font-family: 'Playfair Display', serif;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  transform: rotate(9deg);
+}
+
+.flower-sticker {
+  position: absolute;
+  z-index: 4;
+  bottom: 7px;
+  left: 5%;
+  color: var(--pink-dark);
+  font-size: 47px;
+}
+
+.heart-sticker {
+  position: absolute;
+  z-index: 4;
+  right: 5%;
+  top: 80px;
+  color: var(--pink-dark);
+  font-size: 38px;
+  transform: rotate(14deg);
+}
+
+.note-card {
+  position: absolute;
+  z-index: 4;
+  left: 1%;
+  bottom: 15px;
+  padding: 12px;
+  background: #fff0f4;
+  border: 1px dashed #e1a7b9;
+  color: var(--pink-dark);
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  line-height: 1.5;
+  transform: rotate(-7deg);
+}
+
+.marquee {
+  margin: 35px 0;
+  padding: 13px 0;
+  overflow: hidden;
+  border-top: 1px solid #e8c4d0;
+  border-bottom: 1px solid #e8c4d0;
+  color: var(--pink-dark);
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  text-align: center;
+  direction: ltr;
+}
+
+.section {
+  position: relative;
+  margin: 30px 0;
+  padding: 32px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 5px 5px 0 #f5e8e9;
+  scroll-margin-top: 20px;
+}
+
+.section::before {
+  content: '♡';
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  color: #e5a9bb;
+  font-size: 22px;
+}
+
+.section-heading {
+  margin-bottom: 25px;
+}
+
+.eyebrow {
+  color: var(--pink-dark);
+  font-size: 10px;
+  letter-spacing: 2px;
+  direction: ltr;
+}
+
+.section-heading h2 {
+  margin: 9px 0 5px;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 600;
+  direction: ltr;
+  text-align: right;
+}
+
+.section-heading h2 span {
+  color: var(--pink);
+  font-family: 'Cairo', sans-serif;
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 13px 10px;
+  background: #fff8fa;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.tabs button.active {
+  background: var(--pink-dark);
+  color: white;
+  border-color: var(--pink-dark);
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 10px 0;
+  padding: 15px;
+  background: #fffafa;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.step input {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--pink-dark);
+}
+
+.step span {
+  display: block;
+}
+
+.step strong {
+  display: block;
+  font-size: 13px;
+}
+
+.step small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.progress {
+  padding: 12px;
+  background: #fff1f5;
+  color: var(--pink-dark);
+  font-size: 12px;
+  text-align: center;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 13px;
+  background: #fffafa;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px #fbeaf0;
+}
+
+textarea {
+  resize: vertical;
+  line-height: 1.8;
+}
+
+.primary,
+.secondary {
+  padding: 13px 16px;
+  border: 1px solid var(--pink-dark);
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.primary {
+  background: var(--pink-dark);
+  color: white;
+}
+
+.secondary {
+  width: 100%;
+  background: var(--pink-soft);
+  color: var(--pink-dark);
+  border-color: var(--line);
+}
+
+.primary:hover,
+.secondary:hover {
+  opacity: .88;
+  transform: translateY(-1px);
+}
+
+.productCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding: 15px;
+  background: #fff8fa;
+  border: 1px solid var(--line);
+}
+
+.productCard strong {
+  display: block;
+  font-size: 13px;
+}
+
+.productCard small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.deleteButton {
+  flex-shrink: 0;
+  padding: 8px 11px;
+  border: 0;
+  background: #f8dce5;
+  color: var(--pink-dark);
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.emptyProducts {
+  padding: 18px;
+  background: #fff8fa;
+  border: 1px dashed #e6bac9;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.closing-note {
+  margin: 38px 0 25px;
+  padding: 35px 15px;
+  background: #f9e3e9;
+  border: 1px dashed #dfa9bb;
+  text-align: center;
+}
+
+.closing-note > span:first-child {
+  color: var(--pink-dark);
+  font-size: 30px;
+}
+
+.closing-note p {
+  color: var(--pink-dark);
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-style: italic;
+  direction: ltr;
+}
+
+.closing-note h2 {
+  font-size: 20px;
+}
+
+.closing-small {
+  color: #9f7787;
+  font-size: 10px;
+  direction: ltr;
+}
+
+footer {
+  padding: 25px 0 15px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: 'Playfair Display', serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-align: center;
+  direction: ltr;
+}
+
+@media (max-width: 700px) {
+  .app {
+    width: calc(100% - 22px);
+    padding-top: 10px;
+  }
+
+  .nav-note {
+    font-size: 9px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 25px 19px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .collage {
+    min-height: 330px;
+  }
+
+  .section {
+    padding: 25px 17px;
+  }
+
+  .section-heading h2 {
+    font-size: 26px;
+  }
+
+  .tabs button {
+    font-size: 11px;
+  }
+}
+  </style>
+  <script>
+    function setupAppPages() {
+  const sections = {
+    home: null,
+    routine: document.getElementById('routine'),
+    products: document.getElementById('products'),
+    diary: document.getElementById('diary'),
+    reminders: document.getElementById('reminders')
+  };
+
+  const hero = document.querySelector('.hero');
+  const marquee = document.querySelector('.marquee');
+  const closing = document.querySelector('.closing-note');
+
+  const nav = document.createElement('nav');
+  nav.className = 'app-bottom-nav';
+
+  const items = [
+    ['home', '⌂', 'الرئيسية'],
+    ['routine', '♡', 'روتيني'],
+    ['products', '✿', 'منتجاتي'],
+    ['diary', '📔', 'مذكّراتي'],
+    ['reminders', '♧', 'تذكيراتي']
+  ];
+
+  items.forEach(([page, icon, label]) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.innerHTML = `<span>${icon}</span><small>${label}</small>`;
+    button.addEventListener('click', () => showPage(page));
+    nav.appendChild(button);
+  });
+
+  document.querySelector('.app').appendChild(nav);
+
+  const style = document.createElement('style');
+  style.textContent = `
+    body { padding-bottom: 85px; }
+    .app-bottom-nav {
+      position: fixed;
+      z-index: 1000;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-around;
+      gap: 3px;
+      padding: 10px 5px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(255,250,245,.97);
+      border-top: 1px solid #f0dce1;
+      box-shadow: 0 -5px 20px #81515e12;
+      direction: rtl;
+    }
+    .app-bottom-nav button {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 5px 1px;
+      border: 0;
+      background: transparent;
+      color: #a28b91;
+      font-family: Cairo, sans-serif;
+      cursor: pointer;
+    }
+    .app-bottom-nav button span { font-size: 21px; }
+    .app-bottom-nav button small { font-size: 10px; }
+    .app-bottom-nav button.active {
+      color: #a95675;
+      font-weight: 700;
+    }
+    .app-bottom-nav button.active span {
+      background: #f8dce5;
+      border-radius: 12px;
+      padding: 2px 12px;
+    }
+    .section { scroll-margin-top: 12px; }
+  `;
+  document.head.appendChild(style);
+
+  window.showPage = function(page) {
+    Object.entries(sections).forEach(([name, section]) => {
+      if (section) section.style.display = name === page ? 'block' : 'none';
+    });
+
+    const isHome = page === 'home';
+    if (hero) hero.style.display = isHome ? 'grid' : 'none';
+    if (marquee) marquee.style.display = isHome ? 'block' : 'none';
+    if (closing) closing.style.display = isHome ? 'block' : 'none';
+
+    nav.querySelectorAll('button').forEach((button, index) => {
+      button.classList.toggle('active', items[index][0] === page);
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  showPage('home');
+}
+
+setupAppPages();
+
+const quickLinks = document.createElement('section');
+quickLinks.className = 'quick-links';
+
+quickLinks.innerHTML = `
+  <div class="quick-heading">
+    <span>YOUR LITTLE SPACE ♡</span>
+    <h2>أهلًا بكِ في عنايتي 🎀</h2>
+    <p>وش ودّك تسوين اليوم؟</p>
+  </div>
+
+  <button class="quick-card" data-page="routine">
+    <span class="quick-icon">☀</span>
+    <span><strong>روتيني اليومي</strong><small>خطوات عنايتك الصباحية والمسائية</small></span>
+    <b>←</b>
+  </button>
+
+  <button class="quick-card" data-page="products">
+    <span class="quick-icon">🧴</span>
+    <span><strong>رف منتجاتي</strong><small>كل منتجاتك المفضلة في مكان واحد</small></span>
+    <b>←</b>
+  </button>
+
+  <button class="quick-card" data-page="diary">
+    <span class="quick-icon">📔</span>
+    <span><strong>مذكّرات بشرتي</strong><small>سجّلي ملاحظاتك وتغيّرات بشرتك</small></span>
+    <b>←</b>
+  </button>
+
+  <button class="quick-card" data-page="reminders">
+    <span class="quick-icon">♡</span>
+    <span><strong>تذكيراتي</strong><small>رتّبي أوقات العناية الخاصة بكِ</small></span>
+    <b>←</b>
+  </button>
+`;
+
+document.querySelector('.hero').after(quickLinks);
+
+const quickStyle = document.createElement('style');
+quickStyle.textContent = `
+  .quick-links {
+    display: grid;
+    gap: 12px;
+    margin: 25px 0 35px;
+  }
+
+  .quick-heading {
+    margin-bottom: 8px;
+    text-align: right;
+  }
+
+  .quick-heading > span {
+    color: #a95675;
+    font-size: 10px;
+    letter-spacing: 2px;
+    direction: ltr;
+  }
+
+  .quick-heading h2 {
+    margin: 8px 0;
+    font-size: 23px;
+  }
+
+  .quick-heading p {
+    color: #a28b91;
+    font-size: 12px;
+  }
+
+  .quick-card {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    padding: 16px;
+    background: #fffdfb;
+    border: 1px solid #f0dce1;
+    box-shadow: 3px 3px 0 #f5e8e9;
+    color: #513b43;
+    text-align: right;
+    font-family: Cairo, sans-serif;
+    cursor: pointer;
+    transition: .2s;
+  }
+
+  .quick-card:hover {
+    transform: translateY(-2px);
+    background: #fff4f7;
+  }
+
+  .quick-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: #f8dce5;
+    border-radius: 50%;
+    font-size: 21px;
+  }
+
+  .quick-card > span:nth-child(2) {
+    flex: 1;
+  }
+
+  .quick-card strong,
+  .quick-card small {
+    display: block;
+  }
+
+  .quick-card strong {
+    font-size: 13px;
+  }
+
+  .quick-card small {
+    margin-top: 4px;
+    color: #a28b91;
+    font-size: 10px;
+  }
+
+  .quick-card > b {
+    color: #a95675;
+  }
+`;
+document.head.appendChild(quickStyle);
+
+const previousShowPage = window.showPage;
+
+window.showPage = function(page) {
+  previousShowPage(page);
+  quickLinks.style.display = page === 'home' ? 'grid' : 'none';
+};
+
+quickLinks.querySelectorAll('[data-page]').forEach(card => {
+  card.addEventListener('click', () => {
+    window.showPage(card.dataset.page);
+  });
+});
+
+const skincareRoutines = {
+  morning: [
+    ['غسول الوجه', 'تنظيف البشرة بلطف'],
+    ['المرطب', 'ترطيب البشرة'],
+    ['واقي الشمس', 'آخر خطوة في روتين الصباح']
+  ],
+  evening: [
+    ['غسول الوجه', 'إزالة الأوساخ وبقايا اليوم'],
+    ['العلاج أو السيروم', 'حسب احتياج بشرتك'],
+    ['المرطب', 'ترطيب البشرة قبل النوم']
+  ]
+};
+
+window.showRoutine = function(period, button) {
+  const container = document.getElementById('steps');
+  const progress = document.getElementById('progress');
+
+  document.querySelectorAll('.tabs button').forEach(tab => {
+    tab.classList.remove('active');
+  });
+
+  if (button) {
+    button.classList.add('active');
+  } else {
+    document.querySelector('.tabs button').classList.add('active');
+  }
+
+  const today = new Date();
+  const dateKey = [
+    today.getFullYear(),
+    String(today.getMonth() + 1).padStart(2, '0'),
+    String(today.getDate()).padStart(2, '0')
+  ].join('-');
+
+  const storageKey = `enayati-${dateKey}-${period}`;
+  let checkedItems = JSON.parse(
+    localStorage.getItem(storageKey) || '[]'
+  );
+
+  function render() {
+    container.replaceChildren();
+
+    skincareRoutines[period].forEach((item, index) => {
+      const label = document.createElement('label');
+      label.className = 'step';
+
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.checked = checkedItems.includes(index);
+
+      const text = document.createElement('span');
+      const title = document.createElement('strong');
+      title.textContent = item[0];
+
+      const description = document.createElement('small');
+      description.textContent = item[1];
+
+      text.append(title, description);
+      label.append(checkbox, text);
+      container.appendChild(label);
+
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          checkedItems.push(index);
+        } else {
+          checkedItems = checkedItems.filter(i => i !== index);
+        }
+
+        localStorage.setItem(
+          storageKey,
+          JSON.stringify(checkedItems)
+        );
+
+        updateProgress();
+      });
+    });
+
+    updateProgress();
+  }
+
+  function updateProgress() {
+    progress.textContent =
+      `أنجزتِ ${checkedItems.length} من ${skincareRoutines[period].length} خطوات اليوم ♡`;
+  }
+
+  render();
+};
+
+window.showRoutine('morning');
+
+const enayatiProductForm = document.getElementById('productForm');
+const enayatiProductName = document.getElementById('productName');
+const enayatiProductType = document.getElementById('productType');
+const enayatiProductList = document.getElementById('productList');
+
+let enayatiProducts = JSON.parse(
+  localStorage.getItem('enayati-products') || '[]'
+);
+
+function renderEnayatiProducts() {
+  enayatiProductList.replaceChildren();
+
+  if (enayatiProducts.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'emptyProducts';
+    empty.textContent = 'رف منتجاتك ينتظرك ♡ أضيفي أول منتج!';
+    enayatiProductList.appendChild(empty);
+    return;
+  }
+
+  enayatiProducts.forEach(product => {
+    const card = document.createElement('div');
+    card.className = 'productCard';
+
+    const details = document.createElement('div');
+    const name = document.createElement('strong');
+    name.textContent = product.name;
+
+    const type = document.createElement('small');
+    type.textContent = product.type;
+
+    details.append(name, type);
+
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'deleteButton';
+    remove.textContent = 'حذف';
+
+    remove.addEventListener('click', () => {
+      enayatiProducts = enayatiProducts.filter(
+        item => item.id !== product.id
+      );
+
+      localStorage.setItem(
+        'enayati-products',
+        JSON.stringify(enayatiProducts)
+      );
+
+      renderEnayatiProducts();
+    });
+
+    card.append(details, remove);
+    enayatiProductList.appendChild(card);
+  });
+}
+
+enayatiProductForm.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const name = enayatiProductName.value.trim();
+  if (!name) return;
+
+  enayatiProducts.push({
+    id: Date.now().toString() + Math.random().toString(36).slice(2),
+    name,
+    type: enayatiProductType.value
+  });
+
+  localStorage.setItem(
+    'enayati-products',
+    JSON.stringify(enayatiProducts)
+  );
+
+  enayatiProductForm.reset();
+  renderEnayatiProducts();
+});
+
+renderEnayatiProducts();
+
+const enayatiDiaryForm = document.getElementById('diaryForm');
+const enayatiDiaryDate = document.getElementById('diaryDate');
+const enayatiSkinCondition = document.getElementById('skinCondition');
+const enayatiDiaryNotes = document.getElementById('diaryNotes');
+const enayatiDiaryList = document.getElementById('diaryList');
+
+const now = new Date();
+enayatiDiaryDate.value = [
+  now.getFullYear(),
+  String(now.getMonth() + 1).padStart(2, '0'),
+  String(now.getDate()).padStart(2, '0')
+].join('-');
+
+let enayatiDiary = JSON.parse(
+  localStorage.getItem('enayati-diary') || '[]'
+);
+
+function renderEnayatiDiary() {
+  enayatiDiaryList.replaceChildren();
+
+  if (enayatiDiary.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'emptyProducts';
+    empty.textContent = 'مساحة صغيرة لملاحظاتك الجميلة ♡';
+    enayatiDiaryList.appendChild(empty);
+    return;
+  }
+
+  [...enayatiDiary].reverse().forEach(entry => {
+    const card = document.createElement('div');
+    card.className = 'productCard';
+
+    const details = document.createElement('div');
+    const title = document.createElement('strong');
+    title.textContent = `${entry.date} · ${entry.condition}`;
+
+    const notes = document.createElement('small');
+    notes.textContent = entry.notes || 'ما كتبتي ملاحظات لهذا اليوم ♡';
+
+    details.append(title, notes);
+
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'deleteButton';
+    remove.textContent = 'حذف';
+
+    remove.addEventListener('click', () => {
+      enayatiDiary = enayatiDiary.filter(
+        item => item.id !== entry.id
+      );
+
+      localStorage.setItem(
+        'enayati-diary',
+        JSON.stringify(enayatiDiary)
+      );
+
+      renderEnayatiDiary();
+    });
+
+    card.append(details, remove);
+    enayatiDiaryList.appendChild(card);
+  });
+}
+
+enayatiDiaryForm.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const date = enayatiDiaryDate.value;
+  const condition = enayatiSkinCondition.value;
+  const notes = enayatiDiaryNotes.value.trim();
+
+  const entry = {
+    id: Date.now().toString(),
+    date,
+    condition,
+    notes
+  };
+
+  enayatiDiary = enayatiDiary.filter(
+    item => item.date !== date
+  );
+  enayatiDiary.push(entry);
+
+  localStorage.setItem(
+    'enayati-diary',
+    JSON.stringify(enayatiDiary)
+  );
+
+  enayatiDiaryNotes.value = '';
+  renderEnayatiDiary();
+});
+
+renderEnayatiDiary();
+
+const enayatiReminderForm = document.getElementById('reminderForm');
+const enayatiReminderName = document.getElementById('reminderName');
+const enayatiReminderPeriod = document.getElementById('reminderPeriod');
+const enayatiReminderTime = document.getElementById('reminderTime');
+const enayatiReminderList = document.getElementById('reminderList');
+const enayatiNotificationButton = document.getElementById('enableNotifications');
+
+let enayatiReminders = JSON.parse(
+  localStorage.getItem('enayati-reminders') || '[]'
+);
+
+function renderEnayatiReminders() {
+  enayatiReminderList.replaceChildren();
+
+  if (enayatiReminders.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'emptyProducts';
+    empty.textContent = 'ما عندك تذكيرات للحين ♡';
+    enayatiReminderList.appendChild(empty);
+    return;
+  }
+
+  enayatiReminders.forEach(reminder => {
+    const card = document.createElement('div');
+    card.className = 'productCard';
+
+    const details = document.createElement('div');
+    const title = document.createElement('strong');
+    title.textContent = reminder.name;
+
+    const info = document.createElement('small');
+    const period = reminder.period === 'morning' ? 'الصباح ☀' : 'المساء ☾';
+    info.textContent = `${period} · ${reminder.time}`;
+
+    details.append(title, info);
+
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'deleteButton';
+    remove.textContent = 'حذف';
+
+    remove.addEventListener('click', () => {
+      enayatiReminders = enayatiReminders.filter(
+        item => item.id !== reminder.id
+      );
+
+      localStorage.setItem(
+        'enayati-reminders',
+        JSON.stringify(enayatiReminders)
+      );
+
+      renderEnayatiReminders();
+    });
+
+    card.append(details, remove);
+    enayatiReminderList.appendChild(card);
+  });
+}
+
+enayatiReminderForm.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const name = enayatiReminderName.value.trim();
+  const time = enayatiReminderTime.value;
+
+  if (!name || !time) return;
+
+  enayatiReminders.push({
+    id: Date.now().toString(),
+    name,
+    period: enayatiReminderPeriod.value,
+    time
+  });
+
+  localStorage.setItem(
+    'enayati-reminders',
+    JSON.stringify(enayatiReminders)
+  );
+
+  enayatiReminderForm.reset();
+  renderEnayatiReminders();
+});
+
+enayatiNotificationButton.addEventListener('click', async () => {
+  if (!('Notification' in window)) {
+    alert('المتصفح لا يدعم الإشعارات هنا. تقدرين تحتفظين بتذكيراتك داخل التطبيق.');
+    return;
+  }
+
+  try {
+    const permission = await Notification.requestPermission();
+
+    if (permission === 'granted') {
+      alert('تم السماح بالإشعارات ♡ تذكري أن التنبيهات التلقائية تحتاج بقاء التطبيق مفتوحًا.');
+    } else {
+      alert('الإشعارات غير مفعّلة. تقدرين تفعّلينها من إعدادات المتصفح.');
+    }
+  } catch {
+    alert('تعذر تفعيل الإشعارات في هذه المعاينة. سنضبطها بعد نشر التطبيق.');
+  }
+});
+
+renderEnayatiReminders();
+</script>
